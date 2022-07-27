@@ -4,8 +4,8 @@ const commentsPopup = async (animeId) => {
   const animeData = await getAnime();
   const anime = animeData.find((anime) => anime.mal_id === animeId);
 
-  let comments = 'No comments yet';
-  comments = (await getComments(animeId)) || [];
+  const commentsData = await getComments(animeId);
+  const comments = !commentsData.error ? commentsData : [];
 
   const content = document.querySelector('#content');
   const commentsPopup = `

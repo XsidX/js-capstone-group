@@ -44,6 +44,8 @@ content.addEventListener('submit', (e) => {
     comment,
   };
   postComment(commentBody);
+  document.querySelector('#name').value = '';
+  document.querySelector('#textarea').value = '';
 });
 
 // Event: Close comments/reservations popup
