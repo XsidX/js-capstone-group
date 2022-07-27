@@ -3,7 +3,9 @@ import { getAnime, getComments } from './API.js';
 const commentsPopup = async (animeId) => {
   const animeData = await getAnime();
   const anime = animeData.find((anime) => anime.mal_id === animeId);
-  const comments = await getComments(animeId);
+
+  const commentsData = await getComments(animeId);
+  const comments = !commentsData.error ? commentsData : [];
 
   const content = document.querySelector('#content');
   const commentsPopup = `
