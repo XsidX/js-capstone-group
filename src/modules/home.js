@@ -22,7 +22,7 @@ const homePage = async () => {
           <h6><i class="fa fa-heart" data-likeid='${anime.mal_id}'></i>${numLike} Likes</h6>
           <br>
           <button type="button" class="btn btn-info btn-cm" data-cm_popup='${anime.mal_id}'>Comment</button>
-          <button type="button" class="btn btn-success">Reservation</button>
+          <button type="button" class="btn btn-success btn-rs" data-reserve_popup='${anime.mal_id}'>Reservation</button>
         </div>`;
   });
 };

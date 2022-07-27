@@ -1,10 +1,11 @@
 /* eslint-disable camelcase */
 import commentsPopup from './modules/comments.js';
-import { addLikes, postComment } from './modules/API.js';
+import { addLikes, postComment, createReservation } from './modules/API.js';
 import homePage from './modules/home.js';
 
 import './styles/comments.css';
 import './styles/home.css';
+import reservationsPopup from './modules/reservations.js';
 
 window.addEventListener('load', homePage);
 
@@ -28,6 +29,14 @@ content.addEventListener('click', (e) => {
   commentsPopup(animeId);
 });
 
+// Event: Open reservations popup
+content.addEventListener('click', (e) => {
+  const clicked = e.target.closest('.btn-rs');
+  if (!clicked) return;
+  const animeId = +clicked.dataset.reserve_popup;
+  reservationsPopup(animeId);
+});
+
 // Event: Post comment
 content.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -43,9 +52,31 @@ content.addEventListener('submit', (e) => {
     username,
     comment,
   };
+
   postComment(commentBody);
   document.querySelector('#name').value = '';
   document.querySelector('#textarea').value = '';
+});
+
+content.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const submit = e.target.closest('.reservation-form');
+  if (!submit) return;
+
+  const item_id = submit.dataset.animeid;
+  const username = document.querySelector('#name').value;
+  const date_start = document.querySelector('#start').value;
+  const date_end = document.querySelector('#end').value;
+  const reserveBody = {
+    item_id,
+    username,
+    date_start,
+    date_end,
+  };
+  createReservation(reserveBody);
+  document.querySelector('#name').value = '';
+  document.querySelector('#start').value = '';
+  document.querySelector('#end').value = '';
 });
 
 // Event: Close comments/reservations popup

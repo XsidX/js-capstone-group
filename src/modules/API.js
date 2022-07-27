@@ -46,6 +46,24 @@ const getLikes = async () => {
   return JSON.parse(data);
 };
 
+const createReservation = async (reserveBody) => {
+  const response = await fetch(`${Base_URL_INVOLVEMENT}/apps/${APP_ID}/reservations`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify(reserveBody),
+  });
+  const data = await response.text();
+  return data;
+};
+
+const getReservations = async (animeId) => {
+  const response = await fetch(`${Base_URL_INVOLVEMENT}/apps/${APP_ID}/reservations?item_id=${animeId}`);
+  const data = await response.text();
+  return JSON.parse(data);
+};
+
 export {
-  getAnime, postComment, getComments, addLikes, getLikes,
+  getAnime, postComment, getComments, addLikes, getLikes, createReservation, getReservations,
 };
