@@ -11,10 +11,10 @@ const reservationsPopup = async (animeId) => {
 
   const content = document.querySelector('#content');
   const reservationForm = `
-    <section id="comments-popup" class="popup-wrapper">
-      <div class="popup-container">
-        <img src="${anime.images.jpg.large_image_url}" alt="" />
-        <div class="desc-container">
+    <section id='comments-popup' class='popup-wrapper'>
+      <div class='popup-container'>
+        <img src='${anime.images.jpg.large_image_url}' alt='' />
+        <div class='desc-container'>
           <h2>${anime.title}</h2>
           <ul>
             <li>English translation: ${anime.title_english}</li>
@@ -23,8 +23,8 @@ const reservationsPopup = async (animeId) => {
             <li>IMDB score: ${anime.score}</li>
           </ul>
         </div>
-        <section class="reactions-wrapper">
-          <div class="comments-container">
+        <section class='reactions-wrapper'>
+          <div class='comments-container'>
           <h3>Reservations ${reservesCount}</h4>
           <ul>
             ${reserves
@@ -36,14 +36,14 @@ const reservationsPopup = async (animeId) => {
     .join('')}
           </ul>
         </div>
-        <form class="reservation-form" action="/" data-animeid=${animeId}>
+        <form class='reservation-form' action='/' data-animeid=${animeId}>
           <h3>Add a comment</h3>
-          <input type="text" id="name" class="name" placeholder="Your name" required />
-          <input type="text" id="start" class="start" placeholder="Start date" required />
-          <input type="text" id="end" class="end" placeholder="End date" required />
-          <button class="btn-submit" type="submit">Reserve</button>
+          <input type='text' id='name' class='name' placeholder='Your name' required />
+          <input type='text' id='start' class='start' placeholder='Start date' required />
+          <input type='text' id='end' class='end' placeholder='End date' required />
+          <button class='btn-submit' type='submit'>Reserve</button>
         </form>
-        <button class="btn-close">
+        <button class='btn-close'>
           x
         </button>
         </section>

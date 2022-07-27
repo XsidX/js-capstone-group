@@ -31,11 +31,9 @@ content.addEventListener('click', (e) => {
 
 // Event: Open reservations popup
 content.addEventListener('click', (e) => {
-  console.log('Open reservations');
   const clicked = e.target.closest('.btn-rs');
   if (!clicked) return;
   const animeId = +clicked.dataset.reserve_popup;
-  console.log(animeId);
   reservationsPopup(animeId);
 });
 
@@ -74,11 +72,10 @@ content.addEventListener('submit', (e) => {
     username,
     date_start,
     date_end,
-  }
-  console.log(reserveBody, 'in the index file')
+  };
   createReservation(reserveBody);
   document.querySelector('#name').value = '';
-   document.querySelector('#start').value = '';
+  document.querySelector('#start').value = '';
   document.querySelector('#end').value = '';
 });
 
