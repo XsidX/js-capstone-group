@@ -27,12 +27,12 @@ const commentsPopup = async (animeId) => {
           <h3>(${commentsCounter}) Comments</h4>
           <ul>
             ${comments
-              .map(
-                ({ creation_date: created, username, comment }) => `
+    .map(
+      ({ creation_date: created, username, comment }) => `
               <li> ${created} ${username}: ${comment}</li>
-            `
-              )
-              .join('')}
+            `,
+    )
+    .join('')}
           </ul>
         </div>
         <form class="comments-form" action="/" data-animeid=${animeId}>
