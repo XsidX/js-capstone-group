@@ -3,7 +3,9 @@ import { getAnime, getComments } from './API.js';
 const commentsPopup = async (animeId) => {
   const animeData = await getAnime();
   const anime = animeData.find((anime) => anime.mal_id === animeId);
-  const comments = await getComments(animeId);
+
+  let comments = 'No comments yet';
+  comments = (await getComments(animeId)) || [];
 
   const content = document.querySelector('#content');
   const commentsPopup = `
@@ -24,12 +26,12 @@ const commentsPopup = async (animeId) => {
           <h3>Comments (2)</h4>
           <ul>
             ${comments
-    .map(
-      ({ creation_date: created, username, comment }) => `
+              .map(
+                ({ creation_date: created, username, comment }) => `
               <li> ${created} ${username}: ${comment}</li>
-            `,
-    )
-    .join('')}
+            `
+              )
+              .join('')}
           </ul>
         </div>
         <form class="comments-form" action="/" data-animeid=${animeId}>

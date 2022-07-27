@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import commentsPop from './modules/comments.js';
+import commentsPopup from './modules/comments.js';
 import { addLikes, postComment } from './modules/API.js';
 import homePage from './modules/home.js';
 
@@ -22,10 +22,10 @@ content.addEventListener('click', (e) => {
 
 // Event: Open comments popup
 content.addEventListener('click', (e) => {
-  const clicked = e.target.closest('.btn-comments');
+  const clicked = e.target.closest('.btn-cm');
   if (!clicked) return;
-  const animeId = +clicked.dataset.popup;
-  commentsPop(animeId);
+  const animeId = +clicked.dataset.cm_popup;
+  commentsPopup(animeId);
 });
 
 // Event: Post comment

@@ -1,26 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-}
-
-h2,
-h3 {
-  text-align: center;
-  padding-bottom: 20px;
-}
-
-ul {
-  list-style: none;
-}
-
 .btn-submit {
   width: 30%;
   background: transparent;
-}
-
-.content {
-  position: relative;
 }
 
 .popup-wrapper {
@@ -36,9 +16,8 @@ ul {
 .popup-container {
   position: relative;
   background: #fff;
-  border: 1px solid black;
   padding: 20px 10%;
-  width: 35vw;
+  width: 50vw;
   height: 95vh;
   overflow-y: scroll;
 }
@@ -74,7 +53,7 @@ img {
 }
 
 .comments-form input {
-  width: 30%;
+  width: 45%;
 }
 
 .comments-form input,
@@ -86,7 +65,7 @@ button {
 }
 
 .comments-form textarea {
-  width: 40%;
+  width: 60%;
 }
 
 .btn-close {

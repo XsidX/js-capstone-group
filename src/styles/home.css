@@ -1,3 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+h2,
+h3 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
 .navbar-list {
   background-color: #56adbf;
   height: 90px;
@@ -26,7 +42,8 @@
 
 .content {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 10%;
   justify-content: center;
 }
 
