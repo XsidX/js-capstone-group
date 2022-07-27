@@ -6,6 +6,7 @@ const commentsPopup = async (animeId) => {
 
   const commentsData = await getComments(animeId);
   const comments = !commentsData.error ? commentsData : [];
+  const commentsCounter = comments.length;
 
   const content = document.querySelector('#content');
   const commentsPopup = `
@@ -23,15 +24,15 @@ const commentsPopup = async (animeId) => {
         </div>
         <section class="reactions-wrapper">
           <div class="comments-container">
-          <h3>Comments (2)</h4>
+          <h3>(${commentsCounter}) Comments</h4>
           <ul>
             ${comments
-    .map(
-      ({ creation_date: created, username, comment }) => `
+              .map(
+                ({ creation_date: created, username, comment }) => `
               <li> ${created} ${username}: ${comment}</li>
-            `,
-    )
-    .join('')}
+            `
+              )
+              .join('')}
           </ul>
         </div>
         <form class="comments-form" action="/" data-animeid=${animeId}>
