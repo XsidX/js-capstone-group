@@ -63,7 +63,12 @@ const createReservation = async () => {
   return data;
 };
 
+const getReservations = async () => {
+  const response = await fetch(`${Base_URL_INVOLVEMENT}/apps/${APP_ID}/reservations?item_id=0`);
+  const data = await response.text();
+  return JSON.parse(data);
+};
 
 export {
-  getAnime, postComment, getComments, addLikes, getLikes, createReservation,
+  getAnime, postComment, getComments, addLikes, getLikes, createReservation, getReservations,
 };
