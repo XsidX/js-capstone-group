@@ -1,12 +1,24 @@
 /* eslint-disable camelcase */
 import commentsPop from './modules/comments.js';
-import { postComment } from './modules/API.js';
+import { addLikes, postComment } from './modules/API.js';
+import homePage from './modules/home.js';
 
 import './styles/comments.css';
+import './styles/home.css';
 
-window.addEventListener('load', 'home');
+window.addEventListener('load', homePage);
 
 const content = document.querySelector('#content');
+// Event for like
+content.addEventListener('click', (e) => {
+  const clicked = e.target.closest('.fa-heart');
+  if (!clicked) return;
+  const animeId = +clicked.dataset.likeid;
+  const likes = {
+    item_id: animeId,
+  };
+  addLikes(likes);
+});
 
 // Event: Open comments popup
 content.addEventListener('click', (e) => {
