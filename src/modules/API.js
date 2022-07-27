@@ -46,6 +46,24 @@ const getLikes = async () => {
   return JSON.parse(data);
 };
 
+const createReservation = async () => {
+  const response = await fetch(`${Base_URL_INVOLVEMENT}/apps/${APP_ID}/reservations`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: 0,
+      username: 'admin',
+      date_start: '2022-07-30',
+      date_end: '2022-08-10',
+    }),
+  });
+  const data = await response.text();
+  return data;
+};
+
+
 export {
-  getAnime, postComment, getComments, addLikes, getLikes,
+  getAnime, postComment, getComments, addLikes, getLikes, createReservation,
 };
