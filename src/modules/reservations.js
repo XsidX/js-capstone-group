@@ -7,7 +7,6 @@ const reservationsPopup = async (animeId) => {
   const reservationsData = await getReservations(animeId);
   const reserves = !reservationsData.error ? reservationsData : [];
   const reservesCount = reserves.length;
-  console.log(reserves, 'the reservation data');
 
   const content = document.querySelector('#content');
   const reservationForm = `

@@ -59,10 +59,8 @@ const createReservation = async (reserveBody) => {
 };
 
 const getReservations = async (animeId) => {
-  console.log(animeId);
   const response = await fetch(`${Base_URL_INVOLVEMENT}/apps/${APP_ID}/reservations?item_id=${animeId}`);
   const data = await response.text();
-  console.log(data);
   return JSON.parse(data);
 };
 
