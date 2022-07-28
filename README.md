@@ -10,7 +10,7 @@
 - Major languages: HTML , CSS , JavaScript , Webpack, API.
 
 ## Live Demo (if available)
-
+[Live Demo Link](http://username.github.io/js-capstone-group/)
 
 ## Getting Started
 
