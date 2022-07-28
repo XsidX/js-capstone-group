@@ -6,8 +6,16 @@ import homePage from './modules/home.js';
 import './styles/comments.css';
 import './styles/home.css';
 import reservationsPopup from './modules/reservations.js';
+import { mobileMenu } from './modules/mobile.js';
+
+const hamburger = document.querySelector('.hamburger');
 
 window.addEventListener('load', homePage);
+
+hamburger.addEventListener('click', (e) => {
+  console.log('i have clicked');
+  mobileMenu();
+});
 
 const content = document.querySelector('#content');
 // Event for like
