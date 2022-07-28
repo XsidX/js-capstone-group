@@ -13,6 +13,7 @@ const hamburger = document.querySelector('.hamburger');
 window.addEventListener('load', homePage);
 
 hamburger.addEventListener('click', (e) => {
+  e.preventDefault();
   console.log('i have clicked');
   mobileMenu();
 });
