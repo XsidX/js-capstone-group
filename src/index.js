@@ -1,4 +1,5 @@
 /* eslint-disable camelcase */
+// eslint-disable-next-line import/no-cycle
 import commentsPopup from './modules/comments.js';
 import { addLikes, postComment, createReservation } from './modules/API.js';
 import homePage from './modules/home.js';
@@ -19,6 +20,11 @@ hamburger.addEventListener('click', (e) => {
 });
 
 const content = document.querySelector('#content');
+// eslint-disable-next-line import/prefer-default-export
+export const closeBtn = () => {
+  content.classList.remove('show');
+  console.log('he clicked me');
+};
 // Event for like
 content.addEventListener('click', (e) => {
   const clicked = e.target.closest('.fa-heart');
