@@ -7,7 +7,6 @@ const homePage = async () => {
   const likesData = await getLikes();
   let numLike = 0;
   data.forEach((anime) => {
-    console.log(anime);
     likesData.find((like) => {
       if (like.item_id === anime.mal_id) {
         numLike = like.likes;

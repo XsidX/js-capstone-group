@@ -15,16 +15,11 @@ window.addEventListener('load', homePage);
 
 hamburger.addEventListener('click', (e) => {
   e.preventDefault();
-  console.log('i have clicked');
   mobileMenu();
 });
 
 const content = document.querySelector('#content');
-// eslint-disable-next-line import/prefer-default-export
-export const closeBtn = () => {
-  content.classList.remove('show');
-  console.log('he clicked me');
-};
+
 // Event for like
 content.addEventListener('click', (e) => {
   const clicked = e.target.closest('.fa-heart');
