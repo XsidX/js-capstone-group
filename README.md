@@ -10,7 +10,7 @@
 - Major languages: HTML , CSS , JavaScript , Webpack, API.
 
 ## Live Demo (if available)
-[Live Demo Link](http://username.github.io/js-capstone-group/)
+[Live Demo Link](http://XsidX.github.io/js-capstone-group/)
 
 ## Getting Started
 
@@ -36,23 +36,23 @@ Before attempting to get a copy of this, you should know(have) how to do the fol
 
 ## Authors
 
-👤 **Author1**
+👤 **Shaqayq**
 
-- GitHub: [@githubhandle](https://github.com/Shaqayq)
-- Twitter: [@\_sid_o](https://twitter.com/DarwaziShaqayq_)
-- LinkedIn:  [LinkedIn](https://www.linkedin.com/in/shaqayq-darwazi-0a7487233/)
+- GitHub: [Shaqayq](https://github.com/Shaqayq)
+- Twitter: [DarwaziShaqayq](https://twitter.com/DarwaziShaqayq)
+- LinkedIn:  [shaqayq-darwazi](https://www.linkedin.com/in/shaqayq-darwazi-0a7487233/)
 
-**Author2**
+👤 **Sidney**
 
 - GitHub: [XsidX](https://github.com/XsidX)
-- Twitter: [@\_sid_o](https://twitter.com/_sid_o_)
+- Twitter: [_sid_o](https://twitter.com/_sid_o)
 - LinkedIn: [Sidney Kaguli](https://www.linkedin.com/in/sidney-kaguli-0116801a6/)
 
-**Author3**
+👤 **Fadahunsi**
 
-- GitHub: [@Fadahunsi](https://github.com/Fadahunsiseyi)
-- Twitter: [@Fadahunsi](https://twitter.com/@Fadahunsiseyi_)
-- LinkedIn: [Fadahunsi](https://www.linkedin.com/in/fadahunsi-seyi-samuel-49191a209/)
+- GitHub: [Fadahunsiseyi](https://github.com/Fadahunsiseyi)
+- Twitter: [Fadahunsiseyi_](https://twitter.com/@Fadahunsiseyi_)
+- LinkedIn: [fadahunsi-seyi-samuel](https://www.linkedin.com/in/fadahunsi-seyi-samuel-49191a209/)
 
 
 ## 🤝 Contributing
