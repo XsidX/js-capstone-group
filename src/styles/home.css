@@ -213,6 +213,12 @@ a {
   height: 100%;
   width: 100%;
   object-fit: fill;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.img-container img:hover {
+  transform: scale(0.9);
 }
 
 .item h6 {
