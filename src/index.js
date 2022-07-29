@@ -1,15 +1,22 @@
 /* eslint-disable camelcase */
+// eslint-disable-next-line import/no-cycle
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
 import commentsPopup from './modules/comments.js';
 import { addLikes, postComment, createReservation } from './modules/API.js';
 import homePage from './modules/home.js';
-
-import './styles/comments.css';
-import './styles/home.css';
 import reservationsPopup from './modules/reservations.js';
+
+import './styles/popup.css';
+import './styles/home.css';
 
 window.addEventListener('load', homePage);
 
 const content = document.querySelector('#content');
+
 // Event for like
 content.addEventListener('click', (e) => {
   const clicked = e.target.closest('.fa-heart');
@@ -27,6 +34,7 @@ content.addEventListener('click', (e) => {
   if (!clicked) return;
   const animeId = +clicked.dataset.cm_popup;
   commentsPopup(animeId);
+  document.querySelector('body').classList.add('no-scroll');
 });
 
 // Event: Open reservations popup
@@ -35,6 +43,7 @@ content.addEventListener('click', (e) => {
   if (!clicked) return;
   const animeId = +clicked.dataset.reserve_popup;
   reservationsPopup(animeId);
+  document.querySelector('body').classList.add('no-scroll');
 });
 
 // Event: Post comment
@@ -60,7 +69,7 @@ content.addEventListener('submit', (e) => {
 
 content.addEventListener('submit', (e) => {
   e.preventDefault();
-  const submit = e.target.closest('.reservation-form');
+  const submit = e.target.closest('#rs-form');
   if (!submit) return;
 
   const item_id = submit.dataset.animeid;
@@ -86,4 +95,5 @@ content.addEventListener('click', (e) => {
 
   const commentsPopup = document.querySelector('#comments-popup');
   commentsPopup.remove();
+  document.querySelector('body').classList.remove('no-scroll');
 });

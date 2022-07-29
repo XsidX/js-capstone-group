@@ -7,7 +7,7 @@ const getAnime = async () => {
   const url = `${BASE_URL_ANIME}`;
   const response = await fetch(url);
   const data = await response.json();
-  return data.data.slice(0, 6);
+  return data.data.slice(0, 24);
 };
 
 const postComment = async (comment) => {

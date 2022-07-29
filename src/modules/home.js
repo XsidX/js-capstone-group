@@ -1,6 +1,6 @@
 import { getAnime, getLikes } from './API.js';
 
-const section = document.querySelector('#content');
+const section = document.querySelector('.content');
 
 const homePage = async () => {
   const data = await getAnime();
@@ -16,13 +16,22 @@ const homePage = async () => {
     section.innerHTML += `
         <div class="item">
           <div class="img-container">
-          <img src='${anime.images.jpg.image_url}' alt='${anime.title} image '>
+          <img src='${anime.images.jpg.large_image_url}' alt='${anime.title} image '>
           </div>
-          <h6>${anime.title}</h6> 
-          <h6><i class="fa fa-heart" data-likeid='${anime.mal_id}'></i>${numLike} Likes</h6>
-          <br>
-          <button type="button" class="btn btn-info btn-cm" data-cm_popup='${anime.mal_id}'>Comment</button>
-          <button type="button" class="btn btn-success btn-rs" data-reserve_popup='${anime.mal_id}'>Reservation</button>
+          <div class='item-contents'>
+          <div class='texts-container'>
+          <p class="anim-title">${anime.title.split(' ')[0]}</p>
+          <button class="btn-likes"><i class="fa fa-heart" data-likeid='${
+  anime.mal_id
+}'></i><span>${numLike} Likes</span></button>
+          </div>
+          <div class='btn-action-wrapper'>
+          <button type="button" class="btn-action btn-cm" data-cm_popup='${
+  anime.mal_id
+}'><i class="fa-solid fa-message"></i>Comment</button>
+          <button type="button" class="btn-action btn-rs" data-reserve_popup='${anime.mal_id}'>Get Ticket</button>
+          </div>
+          </div>
         </div>`;
   });
 };

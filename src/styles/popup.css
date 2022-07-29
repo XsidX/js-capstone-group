@@ -1,0 +1,286 @@
+.popup-wrapper {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup-container {
+  color: #0e0e0e;
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  margin: 16px;
+  height: calc(100vh - 32px);
+  border-radius: 15px;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+.popup-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cm-img,
+.rs-img {
+  width: 100%;
+  height: 75%;
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .popup-container {
+    margin: 5vw;
+    height: calc(100vh - 10vw);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .cm-info {
+    width: 50%;
+  }
+
+  .cm-img {
+    width: 50%;
+    height: 100%;
+  }
+
+  .rs-info {
+    width: 70%;
+  }
+
+  .rs-img {
+    width: 30%;
+    height: 60vh;
+  }
+
+  .cm-img,
+  .rs-img {
+    margin-right: 16px;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .popup-container {
+    margin: 8vw;
+    height: calc(100vh - 16vw);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .popup-container {
+    margin: 2vw 9vw;
+    height: calc(100vh - 4vw);
+  }
+}
+
+.desc-container h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.cm-desc .tags {
+  padding: 1rem 0;
+}
+
+.cm-desc .tags span {
+  font-size: 12px;
+  font-weight: bold;
+  border: #808791 solid 2px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background: #f5f5f5;
+  cursor: default;
+  margin-right: 5px;
+}
+
+.rs-desc h5 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  margin-top: 5px;
+}
+
+.rs-desc .synopsis {
+  font-size: 14px;
+  font-weight: 400;
+  color: #0e0e0e;
+  margin: 10px 0;
+}
+
+.comment {
+  background-color: rgb(236, 236, 236);
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  cursor: default;
+}
+
+.comment div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment .cm-user,
+.cm-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.comment p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #0e0e0e;
+}
+
+@media screen and (min-width: 768px) {
+  .comment {
+    width: 55%;
+  }
+}
+
+.reactions-wrapper {
+  padding-left: 15px;
+}
+
+.reactions-container {
+  margin-bottom: 15px;
+}
+
+.reactions-container h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.rs-reactions h3 {
+  font-size: 15px;
+}
+
+.reactions-container table {
+  width: 80%;
+  border-spacing: 0;
+  border: 1px solid #eceeef;
+}
+
+.reactions-container th {
+  background-color: #f5f5f5;
+  text-align: left;
+  padding: 5px;
+  font-size: 12px;
+  color: #475569;
+}
+
+.reactions-container td {
+  font-size: 12px;
+  padding: 9px;
+}
+
+.reactions-container tr:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+.comments-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid #dadada;
+  padding-top: 15px;
+}
+
+.rs-form {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .rs-form {
+    display: block;
+  }
+
+  .rs-form input {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .rs-form input {
+    width: 30%;
+  }
+}
+
+.rs-form h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.rs-form input {
+  padding: 10px;
+  border: 1px solid #808791;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.rs-form input::placeholder {
+  color: #808791;
+  font-size: 14px;
+}
+
+.comments-form input,
+textarea {
+  padding: 10px;
+  background-color: rgb(236, 236, 236);
+  border: none;
+  outline: none;
+  border-radius: 15px;
+}
+
+.comments-form input {
+  width: 6rem;
+  margin-bottom: 10px;
+}
+
+.btn-submit {
+  background: transparent;
+  width: 6rem;
+  background-color: #0e0e0e;
+  color: #c0c0c0;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+}
+
+@media screen and (min-width: 768px) {
+  .btn-submit {
+    margin: 10px 0;
+  }
+}
+
+.comments-form .btn-submit {
+  margin: 20px 0;
+}
+
+.btn-close {
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  font-size: 33px;
+  font-weight: 700;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.btn-close .fa-xmark {
+  color: #0e0e0e;
+}
