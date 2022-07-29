@@ -7,6 +7,10 @@ module.exports = {
   entry: {
     index: './src/index.js',
   },
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
@@ -31,8 +35,21 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        test: /\.(gif|png|jpe?g)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/img/',
+            },
+          },
+        ],
+      },
+
+      {
+        test: /\.html$/,
+        use: ['html-loader'],
       },
     ],
   },

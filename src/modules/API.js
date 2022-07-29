@@ -64,4 +64,6 @@ const getReservations = async (animeId) => {
   return JSON.parse(data);
 };
 
-export { getAnime, postComment, getComments, addLikes, getLikes, createReservation, getReservations };
+export {
+  getAnime, postComment, getComments, addLikes, getLikes, createReservation, getReservations,
+};

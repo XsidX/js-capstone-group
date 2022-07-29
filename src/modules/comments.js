@@ -6,44 +6,52 @@ const commentsPopup = async (animeId) => {
 
   const commentsData = await getComments(animeId);
   const comments = !commentsData.error ? commentsData : [];
+  const commentsCount = comments.length;
 
   const content = document.querySelector('#content');
   const commentsPopup = `
     <section id="comments-popup" class="popup-wrapper">
       <div class="popup-container">
-        <img src="${anime.images.jpg.large_image_url}" alt="" />
-        <div class="desc-container">
+        <img class="cm-img" src="${anime.images.jpg.large_image_url}" alt="" />
+        <div class="cm-info">
+          <div class="desc-container cm-desc">
           <h2>${anime.title}</h2>
-          <ul>
-            <li>English translation: ${anime.title_english}</li>
-            <li>Episodes: ${anime.episodes}</li>
-            <li>Source: ${anime.source}</li>
-            <li>IMDB score: ${anime.score}</li>
-          </ul>
+          <div class="tags">
+            <span>${anime.episodes} episodes</span>
+            <span>${anime.source}</span>
+            <span>IMDb ${anime.score}</span>
+          </div>
         </div>
-        <section class="reactions-wrapper">
-          <div class="comments-container">
-          <h3>Comments (2)</h4>
+        <div class="reactions-wrapper">
+          <div class="reactions-container">
+          <h3>View ${commentsCount} previous comments</h4>
           <ul>
             ${comments
     .map(
       ({ creation_date: created, username, comment }) => `
-              <li> ${created} ${username}: ${comment}</li>
+              <li class="comment">
+              <div>
+                <span class="cm-date">${username}</span>
+                <span class="cm-user">${created}</span>
+              </div>
+              <p>${comment}</p>
+              </li>
             `,
     )
     .join('')}
           </ul>
         </div>
         <form class="comments-form" action="/" data-animeid=${animeId}>
-          <h3>Add a comment</h3>
           <input type="text" id="name" class="name" placeholder="Your name" required />
-          <textarea name="" id="textarea" cols="30" rows="5" placeholder="Your insights"></textarea>
+          <textarea id="textarea" cols="30" rows="6" placeholder="Write a comment..." required></textarea>
           <button class="btn-submit" type="submit">Comment</button>
         </form>
         <button class="btn-close">
-          x
+          <i class="fa-solid fa-xmark"></i>
         </button>
-        </section>
+        </div>
+        </div>
+        
       </div>
     </section>
   `;
