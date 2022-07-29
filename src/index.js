@@ -26,6 +26,8 @@ content.addEventListener('click', (e) => {
     item_id: animeId,
   };
   addLikes(likes);
+  const numLike = clicked.nextElementSibling.innerText.match(/\d+/g);
+  clicked.nextElementSibling.textContent = `${+numLike + 1} Likes`;
 });
 
 // Event: Open comments popup
@@ -65,6 +67,24 @@ content.addEventListener('submit', (e) => {
   postComment(commentBody);
   document.querySelector('#name').value = '';
   document.querySelector('#textarea').value = '';
+
+  const addCommentHere = submit.previousElementSibling.lastElementChild;
+  const commentsCount = addCommentHere.childElementCount;
+
+  const commentHTML = `
+    <li class="comment">
+      <div>
+        <span class="cm-date">${username}</span>
+        <span class="cm-user">now</span>
+      </div>
+      <p>${comment}</p>
+    </li>
+  `;
+
+  addCommentHere.innerHTML += commentHTML;
+
+  const addCommentsCountHere = submit.previousElementSibling.firstElementChild;
+  addCommentsCountHere.textContent = `View ${commentsCount + 1} previous comments`;
 });
 
 content.addEventListener('submit', (e) => {
@@ -86,6 +106,22 @@ content.addEventListener('submit', (e) => {
   document.querySelector('#name').value = '';
   document.querySelector('#start').value = '';
   document.querySelector('#end').value = '';
+
+  const addReserveHere = submit.previousElementSibling.lastElementChild;
+  const reservesCount = addReserveHere.childElementCount - 1;
+
+  const reserveHTML = `
+    <tr>
+      <td>${username}</td>
+      <td>${date_start}</td>
+      <td>${date_end}</td>
+    </tr>
+  `;
+
+  addReserveHere.innerHTML += reserveHTML;
+
+  const addReservesCountHere = submit.previousElementSibling.firstElementChild;
+  addReservesCountHere.textContent = `View ${reservesCount + 1} previous reservations`;
 });
 
 // Event: Close comments/reservations popup
