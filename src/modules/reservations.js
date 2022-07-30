@@ -38,16 +38,16 @@ const reservationsPopup = async (animeId) => {
               <th>End Date</th>
             </tr>
             ${reserves
-    .map(
-      ({ date_start: dateStart, username, date_end: dateEnd }) => `
+              .map(
+                ({ date_start: dateStart, username, date_end: dateEnd }) => `
               <tr>
                 <td>${username}</td>
                 <td>${dateStart}</td>
                 <td>${dateEnd}</td>
               </tr>
-            `,
-    )
-    .join('')}
+            `
+              )
+              .join('')}
           </table>
         </div>
         <form id="rs-form" class='rs-form' action='/' data-animeid=${animeId}>
@@ -70,4 +70,11 @@ const reservationsPopup = async (animeId) => {
   content.insertAdjacentHTML('beforeend', rsPopup);
 };
 
-export default reservationsPopup;
+const reservationsCount = async (animeId) => {
+  const reservationsData = await getReservations(animeId);
+  const reserves = !reservationsData.error ? reservationsData : [];
+  const reservesCount = reserves.length;
+  return reservesCount;
+};
+
+export { reservationsPopup, reservationsCount };

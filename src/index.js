@@ -5,10 +5,10 @@
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
-import commentsPopup from './modules/comments.js';
+import { commentsPopup, commentsCount } from './modules/comments.js';
 import { addLikes, postComment, createReservation } from './modules/API.js';
-import homePage from './modules/home.js';
-import reservationsPopup from './modules/reservations.js';
+import { homePage } from './modules/home.js';
+import { reservationsPopup } from './modules/reservations.js';
 
 import './styles/popup.css';
 import './styles/home.css';
@@ -133,3 +133,11 @@ content.addEventListener('click', (e) => {
   commentsPopup.remove();
   document.querySelector('body').classList.remove('no-scroll');
 });
+
+const count = async () => {
+  const res = await commentsCount(43608);
+  // const data = await res.json();
+  console.log(res);
+};
+
+count();
