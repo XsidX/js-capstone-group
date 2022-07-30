@@ -14,7 +14,7 @@
 [Live Demo Link](http://XsidX.github.io/js-capstone-group/)
 
 ## Presentation Demo
-You can see our video demo presentaion [here](https://drive.google.com/file/d/1OE882XOIndsMAiZYu1Ttc5-YdokRDI1l/view)
+You can see our video presentation [here](https://drive.google.com/file/d/1OE882XOIndsMAiZYu1Ttc5-YdokRDI1l/view)
 
 ## Getting Started
 
