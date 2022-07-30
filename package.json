@@ -6,19 +6,21 @@
   "scripts": {
     "test": "jest",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/XsidX/webpack-boilerplate.git"
+    "url": "git+https://github.com/XsidX/js-capstone-group.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/XsidX/webpack-boilerplate/issues"
+    "url": "https://github.com/XsidX/js-capstone-group/issues"
   },
-  "homepage": "https://github.com/XsidX/webpack-boilerplate#readme",
+  "homepage": "https://github.com/XsidX.github.io/js-capstone-group",
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
@@ -30,6 +32,7 @@
     "eslint-plugin-import": "^2.26.0",
     "fetch-mock": "^9.11.0",
     "file-loader": "^1.1.6",
+    "gh-pages": "^4.0.0",
     "hint": "^7.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^5.5.0",
