@@ -5,14 +5,9 @@ const section = document.querySelector('.content');
 const homePage = async () => {
   const data = await getAnime();
   const likesData = await getLikes();
-  let numLike = 0;
   data.forEach((anime) => {
-    likesData.find((like) => {
-      if (like.item_id === anime.mal_id) {
-        numLike = like.likes;
-      }
-      return numLike;
-    });
+    const likes = likesData.find((like) => like.item_id === anime.mal_id) || [];
+    const like = likes.likes || 0;
     section.innerHTML += `
         <div class="item">
           <div class="img-container">
@@ -23,7 +18,7 @@ const homePage = async () => {
           <p class="anim-title">${anime.title.split(' ')[0]}</p>
           <button class="btn-likes"><i class="fa fa-heart" data-likeid='${
   anime.mal_id
-}'></i><span>${numLike} Likes</span></button>
+}'></i><span>${like} Likes</span></button>
           </div>
           <div class='btn-action-wrapper'>
           <button type="button" class="btn-action btn-cm" data-cm_popup='${
