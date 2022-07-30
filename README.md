@@ -2,15 +2,19 @@
 
 #  Anime 
 
-> This is a web application showing list of animes. Users are able to like on different individual anime which updates on real time.Users are able to make comments and reservations on real time.
+> This is a web application showing list of animes. Users are able to like on different individual anime which updates on real time.Users are able to add comments and reserve dates to watch a selected anime.
 
 
 ## Built With
 
-- Major languages: HTML , CSS , JavaScript , Webpack, API.
+- Major languages: HTML , CSS , JavaScript , Webpack, [Involvement API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270), [Jikan REST API](https://docs.api.jikan.moe/#tag/seasons/operation/getSeasonUpcoming
+).
 
-## Live Demo (if available)
+## Live Demo
 [Live Demo Link](http://XsidX.github.io/js-capstone-group/)
+
+## Presentation Demo
+You can see our video demo presentaion [here](https://drive.google.com/file/d/1OE882XOIndsMAiZYu1Ttc5-YdokRDI1l/view)
 
 ## Getting Started
 
