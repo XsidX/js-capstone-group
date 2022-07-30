@@ -27,8 +27,8 @@ const commentsPopup = async (animeId) => {
           <h3>View ${commentsCount} previous comments</h4>
           <ul>
             ${comments
-              .map(
-                ({ creation_date: created, username, comment }) => `
+    .map(
+      ({ creation_date: created, username, comment }) => `
               <li class="comment">
               <div>
                 <span class="cm-date">${username}</span>
@@ -36,9 +36,9 @@ const commentsPopup = async (animeId) => {
               </div>
               <p>${comment}</p>
               </li>
-            `
-              )
-              .join('')}
+            `,
+    )
+    .join('')}
           </ul>
         </div>
         <form class="comments-form" action="/" data-animeid=${animeId}>
@@ -59,11 +59,4 @@ const commentsPopup = async (animeId) => {
   content.insertAdjacentHTML('beforeend', commentsPopup);
 };
 
-const commentsCount = async (animeId) => {
-  const commentsData = await getComments(animeId);
-  const comments = !commentsData.error ? commentsData : [];
-  const commentsCount = comments.length;
-  return commentsCount;
-};
-
-export { commentsPopup, commentsCount };
+export default commentsPopup;
