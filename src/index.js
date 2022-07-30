@@ -7,7 +7,7 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import commentsPopup from './modules/comments.js';
 import { addLikes, postComment, createReservation } from './modules/API.js';
-import { homePage } from './modules/home.js';
+import homePage from './modules/home.js';
 import reservationsPopup from './modules/reservations.js';
 
 import './styles/popup.css';

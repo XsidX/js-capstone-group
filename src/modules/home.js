@@ -29,12 +29,8 @@ const homePage = async () => {
           </div>
         </div>`;
   });
+
+  document.querySelector('#main-title').textContent = `Top ${data.length} Animes`;
 };
 
-const animeCount = async () => {
-  const data = await getAnime();
-  const count = data.length;
-  return count;
-};
-
-export { homePage, animeCount };
+export default homePage;
