@@ -29,6 +29,8 @@ const homePage = async () => {
           </div>
         </div>`;
   });
+
+  document.querySelector('#main-title').textContent = `Top ${data.length} Animes`;
 };
 
 export default homePage;
